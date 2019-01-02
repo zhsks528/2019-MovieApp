@@ -1,44 +1,47 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Toy Project - Movie_App
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+![movie_app](https://user-images.githubusercontent.com/38130934/50578276-f1615e80-0e7a-11e9-9170-c035d683b2e5.png)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 사용기술
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+1. HTML
+2. CSS
+3. REACT
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### 배운점
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### fetch / then / catch
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```
+fetch('URL')
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+.then(response => response.json())
 
-### `npm run eject`
+.then(json = > json.보여주고싶은 data)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+.catch(err = > console.log(err))
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **fetch** : url을 적으면 AJSX로 변환 
+- **.then** : ~가 성공적으로 작동하면 실행하라는 명령어
+- **.catch** : 오류를 잡을 때 쓰는 명령어
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+#### async & await
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+  _getMovies = async () => {
+	const movies = await this._callApi();
+	this.setState({
+		movies
+	});
+  };
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **async** = **비동기식**으로 작동 시킨다.
+- **await** = 작업이 정상적으로 작동/비작동을 따지는 것이 아닌 **완료**가 되면 실행하는 것.
